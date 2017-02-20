@@ -1,0 +1,68 @@
+body
+ {
+ 	background-image: url(background2.jpg);
+  color: #24384D;
+ 	font-size: 21px;
+  font-family: 'Caveat Brush', cursive;
+ }
+
+#container
+{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+
+#logo
+{
+  width: 800px;
+  margin-top: 20px;
+  letter-spacing: 3px;
+
+}
+
+#menu
+{
+  width: 800px;
+  margin-bottom: 30px;
+
+}
+
+#content
+{
+  text-align: justify;
+
+}
+
+#footer
+{
+  text-align: justify;
+  font-size: 14px;
+
+}
+
+.option
+{
+  float: left;
+  min-width: 50px;
+  height: auto;
+  font-size: 25px;
+  padding: 10px;
+  border: 3px solid #24384D;
+  text-align: center;
+  margin-left: 5px;
+
+}
+
+.option:hover
+{
+  color: #F0E7C0;
+  /*border: 3px solid #F0E7C0;*/
+  cursor: pointer;
+  background-image: url(background1.jpg);
+
+
+}
