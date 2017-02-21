@@ -3,9 +3,14 @@
 <div class="subjects edit">
   <h2>Edycja postu<h2>
 
-  <%= form_for(@post) do |f| %>
+  <%= form_for @post, html: { multipart: true } do |f| %>
 
   <table summary="Subject form fields">
+    <tr>
+      <th>Dodaj zdjęcie</th>
+      <th><%= f.file_field(:image)%></th>
+    </tr>
+
     <tr>
       <th>Tytuł postu</th>
       <th><%= f.text_field(:title)%></th>

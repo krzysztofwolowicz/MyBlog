@@ -3,9 +3,13 @@
 <div class="subjects new">
   <h2>Utwórz postu<h2>
 
-  <%= form_for @post, :url => posts_path  do |f| %>
+  <%= form_for @post, html: { multipart: true }, :url => posts_path  do |f| %>
 
   <table summary="Subject form fields">
+    <tr>
+      <th>Dodaj zdjęcie</th>
+      <th><%= f.file_field(:image)%></th>
+    </tr>
     <tr>
       <th>Tytuł postu</th>
       <th><%= f.text_field(:title)%></th>

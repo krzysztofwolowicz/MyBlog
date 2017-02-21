@@ -9,6 +9,10 @@
       <th><%= @post.title%></th>
     </tr>
     <tr>
+      <th>Zdjęcie</th>
+      <th><%= image_tag @post.image(:medium)%></th>
+    </tr>
+    <tr>
       <th>Treść</th>
       <th><%= @post.content%></th>
     </tr>
