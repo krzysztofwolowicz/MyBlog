@@ -1,2 +1,23 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<%= link_to(" << Powrót do listy", posts_path, :class => 'back-link') %>
+
+<div class="subjects edit">
+  <h2>Edycja postu<h2>
+
+  <%= form_for(@post) do |f| %>
+
+  <table summary="Subject form fields">
+    <tr>
+      <th>Tytuł postu</th>
+      <th><%= f.text_field(:title)%></th>
+    </tr>
+    <tr>
+      <th>Treść</th>
+      <th><%= f.text_field(:content)%></th>
+    </tr>
+    <tr>
+  </table>
+  <div class="form-buttons">
+    <%= f.submit("Potwierdź") %>
+  </div>
+</div>
+<% end %>

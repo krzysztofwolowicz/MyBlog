@@ -1,2 +1,25 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%= link_to(" << Powrót do listy", posts_path, :class => 'back-link') %>
+
+<div class="subjects show">
+  <h2>Szczegóły postu<h2>
+
+  <table summary="Subject detail view">
+    <tr>
+      <th>Tytuł postu</th>
+      <th><%= @post.title%></th>
+    </tr>
+    <tr>
+      <th>Treść</th>
+      <th><%= @post.content%></th>
+    </tr>
+    <tr>
+      <th>Stworzony</th>
+      <th><%= @post.created_at%></th>
+    </tr>
+    <tr>
+      <th>Zaktualizowany</th>
+      <th><%= @post.updated_at%></th>
+    </tr>
+
+  </table>
+</div>
