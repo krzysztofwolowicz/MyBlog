@@ -14,10 +14,16 @@
       <td><%= image_tag post.image.url(:thumb) %> </td>
       <td><%= post.title %> </td>
       <td><%= post.content %> </td>
+      <td><%= post.user.email %> </td>
       <td class="actions">
-        <%= link_to("Pokaż", post_path(post), :class => 'action show') %>
-        <%= link_to("Edytuj", edit_post_path(post), :class => 'action edit') %>
-        <%= link_to("Usuń", post, method: :delete, data: { confirm: 'Are you sure?' }) %>
+          <%= link_to("Pokaż", post_path(post), :class => 'action show') %>
+        <% if can? :update, post %>
+          <%= link_to("Edytuj", edit_post_path(post), :class => 'action edit') %>
+        <% end%>
+        <% if can? :destroy, post %>
+          <%= link_to("Usuń", post, method: :delete, data: { confirm: 'Are you sure?' }) %>
+        <%end%>
+
       </td>
     </tr>
     <%end%>

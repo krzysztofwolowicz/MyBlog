@@ -11,6 +11,7 @@
   <body>
   <%if user_signed_in? %>
     <%= link_to "Wyloguj", destroy_user_session_path, :method => :delete %>
+    <%= link_to "Witaj " + current_user.email, edit_user_registration_path%>
   <%end%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

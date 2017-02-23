@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
 
     if @post.save
       flash[:notice] = "Post został utworzony."
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-
+    authorize! :update, @post
   end
 
   def update
@@ -44,6 +45,7 @@ class PostsController < ApplicationController
 
   def delete
     @post = Post.find(params[:id])
+    authorize! :destroy, @post
   end
 
   def destroy
